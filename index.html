@@ -9,29 +9,28 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/socket.io@2/dist/socket.io.js"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="well">
-                    <h3>Online Users</h3>
-                    <ul class="list-group" id="users"></ul>
+<body style="justify-content: center; display:flex;  align-items:center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="well">
+                        <h3>Online Users</h3>
+                        <ul class="list-group" id="users"></ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="chat" id="chat"></div>
+                    <form id="message-form" action="">
+                        <div class="form-group">
+                            <label for="">Enter your message</label>
+                            <textarea class="form-control" name="" id="message"></textarea>
+                        </div>
+                        <br/>
+                        <input type="submit" class="btn btn-primary" id="btn" value="send message"/>
+                    </form>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="chat" id="chat"></div>
-                <form id="message-form" action="">
-                    <div class="form-group">
-                        <label for="">Enter your message</label>
-                        <textarea class="form-control" name="" id="message"></textarea>
-                    </div>
-                    <br/>
-                    <input type="submit" class="btn btn-primary" value="send message"/>
-                </form>
-            </div>
         </div>
-    </div>
-    
     <script>
         $(function(){
             var socket = io.connect();
